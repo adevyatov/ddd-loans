@@ -48,8 +48,13 @@
             "cache:clear": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
         },
+        "tools:install": {
+            "php-cs-fixer": "cd tools/php-cs-fixer && composer install",
+            "psalm": "cd tools/psalm && composer install"
+        },
         "post-install-cmd": [
-            "@auto-scripts"
+            "@auto-scripts",
+            "@tools:install"
         ],
         "post-update-cmd": [
             "@auto-scripts"
