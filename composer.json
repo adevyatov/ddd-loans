@@ -50,7 +50,8 @@
         },
         "tools:install": {
             "php-cs-fixer": "cd tools/php-cs-fixer && composer install",
-            "psalm": "cd tools/psalm && composer install"
+            "psalm": "cd tools/psalm && composer install",
+            "phpmd": "cd tools/phpmd && composer install"
         },
         "post-install-cmd": [
             "@auto-scripts",
