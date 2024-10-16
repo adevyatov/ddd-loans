@@ -8,7 +8,7 @@ use Webmozart\Assert\Assert;
 
 final readonly class Uuid
 {
-    public function __construct(public readonly string $id)
+    public function __construct(public string $value)
     {
         $this->validate();
     }
@@ -20,6 +20,6 @@ final readonly class Uuid
 
     private function validate(): void
     {
-        Assert::uuid($this->id, 'Must be a valid UUID');
+        Assert::uuid($this->value, 'Must be a valid UUID');
     }
 }
