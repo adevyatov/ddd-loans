@@ -6,7 +6,7 @@ namespace App\Client\Application\Update;
 use App\Client\Application\ClientFinder;
 use App\Client\Domain\ClientRepository;
 use App\Client\Domain\ValueObject\Contacts;
-use App\Common\Domain\ValueObject\Uuid;
+use App\Shared\Domain\ValueObject\Uuid;
 
 readonly class ClientSSNUpdater
 {

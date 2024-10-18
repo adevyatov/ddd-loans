@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Common\Domain\Model;
+namespace App\Shared\Domain\Model;
 
-use App\Common\Domain\Event\DomainEvent;
+use App\Shared\Domain\Event\DomainEvent;
 
 abstract class AggregateRoot
 {

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Common\Domain\Enum;
+namespace App\Shared\Domain\Enum;
 
 enum States: string
 {

@@ -4,8 +4,8 @@ declare(strict_types=1);
 namespace App\Client\Domain;
 
 use App\Client\Domain\ValueObject\ClientDetails;
-use App\Common\Domain\Model\AggregateRoot;
-use App\Common\Domain\ValueObject\Uuid;
+use App\Shared\Domain\Model\AggregateRoot;
+use App\Shared\Domain\ValueObject\Uuid;
 
 class Client extends AggregateRoot
 {

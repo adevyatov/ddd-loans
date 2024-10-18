@@ -8,7 +8,7 @@ use App\Client\Domain\Client;
 use App\Client\Domain\ClientNotFound;
 use App\Client\Domain\ClientRepository;
 use App\Client\Domain\ValueObject\ClientDetails;
-use App\Common\Domain\ValueObject\Uuid;
+use App\Shared\Domain\ValueObject\Uuid;
 
 readonly class ClientUpdater
 {

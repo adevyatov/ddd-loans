@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace App\Client\Domain\ValueObject;
 
-use App\Common\Domain\Enum\States;
+use App\Shared\Domain\Enum\States;
 use Webmozart\Assert\Assert;
 
 final readonly class Address

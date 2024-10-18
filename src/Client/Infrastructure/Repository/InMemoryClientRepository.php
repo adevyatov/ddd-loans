@@ -5,7 +5,7 @@ namespace App\Client\Infrastructure\Repository;
 
 use App\Client\Domain\Client;
 use App\Client\Domain\ClientRepository;
-use App\Common\Domain\ValueObject\Uuid;
+use App\Shared\Domain\ValueObject\Uuid;
 
 class InMemoryClientRepository implements ClientRepository
 {
