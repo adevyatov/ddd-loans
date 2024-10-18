@@ -4,9 +4,9 @@ declare(strict_types=1);
 namespace App\Client\Application\Update;
 
 use App\Client\Application\ClientFinder;
-use App\Client\Domain\Client;
 use App\Client\Domain\ClientNotFound;
 use App\Client\Domain\ClientRepository;
+use App\Client\Domain\Model\Client;
 use App\Client\Domain\ValueObject\ClientDetails;
 use App\Shared\Domain\ValueObject\Uuid;
 

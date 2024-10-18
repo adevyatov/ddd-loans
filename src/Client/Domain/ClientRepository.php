@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Client\Domain;
 
+use App\Client\Domain\Model\Client;
 use App\Shared\Domain\ValueObject\Uuid;
 
 interface ClientRepository

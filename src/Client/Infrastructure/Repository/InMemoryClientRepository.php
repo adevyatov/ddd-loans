@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 namespace App\Client\Infrastructure\Repository;
 
-use App\Client\Domain\Client;
 use App\Client\Domain\ClientRepository;
+use App\Client\Domain\Model\Client;
 use App\Shared\Domain\ValueObject\Uuid;
 
 class InMemoryClientRepository implements ClientRepository

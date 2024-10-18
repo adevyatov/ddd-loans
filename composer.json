@@ -5,9 +5,13 @@
     "prefer-stable": true,
     "require": {
         "php": ">=8.3",
+        "ext-bcmath": "*",
         "ext-ctype": "*",
         "ext-iconv": "*",
-        "ext-bcmath": "*",
+        "doctrine/dbal": "^3",
+        "doctrine/doctrine-bundle": "^2.13",
+        "doctrine/doctrine-migrations-bundle": "^3.3",
+        "doctrine/orm": "^3.3",
         "ramsey/uuid": "^4.7",
         "symfony/console": "6.4.*",
         "symfony/dotenv": "6.4.*",
@@ -28,7 +32,10 @@
     "autoload": {
         "psr-4": {
             "App\\": "src/"
-        }
+        },
+        "exclude-from-classmap": [
+            "/src/Shared/Infrastructure/Doctrine/Migrations/"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
@@ -55,12 +62,14 @@
             "phpmd": "cd tools/phpmd && composer install"
         },
         "post-install-cmd": [
+            "@copy-env",
             "@auto-scripts",
             "@tools:install"
         ],
         "post-update-cmd": [
             "@auto-scripts"
-        ]
+        ],
+        "copy-env": "[ ! -f .env ] && cp .env.example .env"
     },
     "conflict": {
         "symfony/symfony": "*"
