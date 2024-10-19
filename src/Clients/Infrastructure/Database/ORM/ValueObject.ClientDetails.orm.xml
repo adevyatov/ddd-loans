@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                                      http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <embeddable name="App\Clients\Domain\ValueObject\ClientDetails">
+        <field name="age" type="integer"/>
+
+        <embedded name="name" class="App\Clients\Domain\ValueObject\Name" use-column-prefix="false"/>
+        <embedded name="address" class="App\Clients\Domain\ValueObject\Address" use-column-prefix="false"/>
+        <embedded name="contacts" class="App\Clients\Domain\ValueObject\Contacts" use-column-prefix="false"/>
+        <embedded name="fico" class="App\Clients\Domain\ValueObject\FICO" use-column-prefix="false"/>
+        <embedded name="ssn" class="App\Clients\Domain\ValueObject\SSN" use-column-prefix="false"/>
+    </embeddable>
+</doctrine-mapping>

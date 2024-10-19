@@ -19,9 +19,9 @@ doctrine:
             Client:
                 type: xml
                 is_bundle: false
-                dir: '%kernel.project_dir%/src/Client/Domain/Model'
-                prefix: 'App\Client\Domain\Model'
-                alias: Client
+                dir: '%kernel.project_dir%/src/Clients/Infrastructure/Database/ORM'
+                prefix: 'App\Clients\Domain'
+                alias: Clients
 
 when@test:
     doctrine:
