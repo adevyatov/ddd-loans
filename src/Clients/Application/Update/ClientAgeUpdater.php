@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Client\Application\Update;
+namespace App\Clients\Application\Update;
 
-use App\Client\Application\ClientFinder;
-use App\Client\Domain\ClientRepository;
-use App\Client\Domain\ValueObject\Name;
+use App\Clients\Application\ClientFinder;
+use App\Clients\Domain\ClientRepository;
+use App\Clients\Domain\ValueObject\Name;
 use App\Shared\Domain\ValueObject\Uuid;
 
 readonly class ClientNameUpdater

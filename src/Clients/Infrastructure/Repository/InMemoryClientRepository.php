@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Client\Infrastructure\Repository;
+namespace App\Clients\Infrastructure\Repository;
 
-use App\Client\Domain\ClientRepository;
-use App\Client\Domain\Model\Client;
+use App\Clients\Domain\ClientRepository;
+use App\Clients\Domain\Model\Client;
 use App\Shared\Domain\ValueObject\Uuid;
 
 class InMemoryClientRepository implements ClientRepository

@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Client\Domain;
+namespace App\Clients\Domain;
 
-use App\Client\Domain\Model\Client;
-use App\Client\Domain\ValueObject\ClientDetails;
+use App\Clients\Domain\Model\Client;
+use App\Clients\Domain\ValueObject\ClientDetails;
 
 class ClientService
 {

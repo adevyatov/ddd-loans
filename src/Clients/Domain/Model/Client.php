@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Client\Domain\Model;
+namespace App\Clients\Domain\Model;
 
-use App\Client\Domain\ValueObject\ClientDetails;
+use App\Clients\Domain\ValueObject\ClientDetails;
 use App\Shared\Domain\Model\AggregateRoot;
 use App\Shared\Domain\ValueObject\Uuid;
 

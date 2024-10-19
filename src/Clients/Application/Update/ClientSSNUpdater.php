@@ -1,14 +1,14 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Client\Application\Update;
+namespace App\Clients\Application\Update;
 
-use App\Client\Application\ClientFinder;
-use App\Client\Domain\ClientRepository;
-use App\Client\Domain\ValueObject\Contacts;
+use App\Clients\Application\ClientFinder;
+use App\Clients\Domain\ClientRepository;
+use App\Clients\Domain\ValueObject\Contacts;
 use App\Shared\Domain\ValueObject\Uuid;
 
-readonly class ClientSSNUpdater
+readonly class ClientContactsUpdater
 {
     private ClientFinder $finder;
 
@@ -20,7 +20,7 @@ readonly class ClientSSNUpdater
     public function __invoke(Uuid $id, Contacts $contacts): void
     {
         $client = $this->finder->getById($id);
-        $client->details()->changeSSN($contacts);
+        $client->details()->changeContacts($contacts);
 
         $this->repository->save($client);
     }

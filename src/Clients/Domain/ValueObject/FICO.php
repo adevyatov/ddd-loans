@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Client\Domain\ValueObject;
+namespace App\Clients\Domain\ValueObject;
 
 use Webmozart\Assert\Assert;
 

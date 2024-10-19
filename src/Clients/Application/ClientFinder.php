@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Client\Application;
+namespace App\Clients\Application;
 
-use App\Client\Domain\ClientRepository;
-use App\Client\Domain\Model\Client;
-use App\Client\Domain\ValueObject\ClientDetails;
+use App\Clients\Domain\ClientRepository;
+use App\Clients\Domain\Model\Client;
+use App\Clients\Domain\ValueObject\ClientDetails;
 
 readonly class ClientCreator
 {
