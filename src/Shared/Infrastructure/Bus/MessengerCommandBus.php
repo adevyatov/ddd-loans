@@ -12,9 +12,9 @@ class MessengerCommandBus implements CommandBus
 {
     use HandleTrait;
 
-    public function __construct(MessageBusInterface $bus)
+    public function __construct(MessageBusInterface $commandBus)
     {
-        $this->messageBus = $bus;
+        $this->messageBus = $commandBus;
     }
 
     public function execute(Command $command): void
