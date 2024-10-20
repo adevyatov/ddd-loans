@@ -19,12 +19,18 @@ doctrine:
         naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
         auto_mapping: true
         mappings:
-            Client:
+            Clients:
                 type: xml
                 is_bundle: false
                 dir: '%kernel.project_dir%/src/Clients/Infrastructure/Database/ORM'
                 prefix: 'App\Clients\Domain'
                 alias: Clients
+            Products:
+                type: xml
+                is_bundle: false
+                dir: '%kernel.project_dir%/src/Clients/Infrastructure/Database/ORM'
+                prefix: 'App\Products\Domain'
+                alias: Products
 
 when@test:
     doctrine:

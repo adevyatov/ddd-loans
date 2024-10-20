@@ -4,9 +4,11 @@
                   xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
                                       http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 
-    <embeddable name="App\Product\Domain\Loan\LoanTerms">
-        <field name="months" type="integer"/>
-        <field name="interestRate" type="float"/>
-        <field name="amount" type="integer"/>
-    </embeddable>
+    <entity name="App\Product\Domain\Loan\Loan" table="products_loan">
+        <id name="id" type="uuid">
+            <generator strategy="NONE"/>
+        </id>
+
+        <embedded name="terms" class="App\Product\Domain\Loan\LoanTerms" use-column-prefix="false"/>
+    </entity>
 </doctrine-mapping>
