@@ -20,6 +20,7 @@ framework:
                 middleware:
                     - doctrine_transaction
             query.bus: ~
+            event.bus: ~
 # when@test:
 #    framework:
 #        messenger:
