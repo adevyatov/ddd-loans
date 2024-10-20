@@ -3,18 +3,18 @@ declare(strict_types=1);
 
 namespace App\Products\Domain\Loan;
 
-use App\Products\Domain\Loan\Adjustments\LoanAdjustment;
+use App\Products\Domain\Loan\Adjustment\LoanAdjustment;
 use App\Products\Domain\Loan\DTO\LoanApplication;
 use App\Shared\Domain\ValueObject\Uuid;
 
 class LoanIssueService
 {
     /**
-     * @param LoanAdjustment[] $adjustments
+     * @param iterable<int, LoanAdjustment> $adjustments
      */
     public function __construct(
         private readonly LoanRestrictionService $restrictionService,
-        private readonly array $adjustments
+        private readonly iterable $adjustments = []
     )
     {
     }
@@ -36,6 +36,6 @@ class LoanIssueService
             $terms = $adjustedTerms;
         }
 
-        return new Loan(Uuid::generate(), $terms);
+        return new Loan(Uuid::generate(), $application->client->id, $terms);
     }
 }

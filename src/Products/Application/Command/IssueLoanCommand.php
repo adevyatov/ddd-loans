@@ -9,7 +9,6 @@ use App\Shared\Domain\Bus\Command\Command;
 
 final readonly class IssueLoanCommand implements Command
 {
-
     public function __construct(public LoanClient $client, public LoanTerms $terms)
     {
     }

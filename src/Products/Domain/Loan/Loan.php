@@ -8,7 +8,7 @@ use App\Shared\Domain\ValueObject\Uuid;
 
 class Loan extends BaseProduct
 {
-    public function __construct(private readonly Uuid $id, private readonly LoanTerms $terms)
+    public function __construct(private readonly Uuid $id, private readonly Uuid $clientId, private readonly LoanTerms $terms)
     {
     }
 
@@ -20,6 +20,11 @@ class Loan extends BaseProduct
     public function id(): Uuid
     {
         return $this->id;
+    }
+
+    public function clientId(): Uuid
+    {
+        return $this->clientId;
     }
 
     public function terms(): LoanTerms

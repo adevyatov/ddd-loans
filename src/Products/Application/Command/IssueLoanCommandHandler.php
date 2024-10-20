@@ -17,7 +17,7 @@ final class IssueLoanCommandHandler implements CommandHandler
     {
     }
 
-    public function handle(IssueLoanCommand $command): void
+    public function __invoke(IssueLoanCommand $command): void
     {
         $loan = $this->issueService->issue(new LoanApplication($command->terms, $command->client));
 

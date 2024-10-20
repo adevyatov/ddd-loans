@@ -9,6 +9,8 @@
             <generator strategy="NONE"/>
         </id>
 
+        <field name="clientId" type="uuid"/>
+
         <embedded name="terms" class="App\Products\Domain\Loan\LoanTerms" use-column-prefix="false"/>
     </entity>
 </doctrine-mapping>

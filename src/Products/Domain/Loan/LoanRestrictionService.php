@@ -12,7 +12,7 @@ class LoanRestrictionService
     /**
      * @param LoanRestriction[] $restrictions
      */
-    public function __construct(private readonly array $restrictions)
+    public function __construct(private readonly iterable $restrictions = [])
     {
     }
 
