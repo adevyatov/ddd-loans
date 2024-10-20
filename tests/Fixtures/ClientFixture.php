@@ -10,7 +10,7 @@ use App\Clients\Domain\ValueObject\Contacts;
 use App\Clients\Domain\ValueObject\FICO;
 use App\Clients\Domain\ValueObject\Name;
 use App\Clients\Domain\ValueObject\SSN;
-use App\Shared\Domain\Enum\States;
+use App\Shared\Domain\Enum\State;
 use App\Shared\Domain\ValueObject\Uuid;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
@@ -40,7 +40,7 @@ class ClientFixture extends Fixture
             'lastName' => 'Doe',
             'age' => 20,
             'city' => 'New York',
-            'state' => States::NewYork->value,
+            'state' => State::NewYork->value,
             'zip' => '40202',
             'fico' => 500,
             'email' => 'john.doe@example.com',

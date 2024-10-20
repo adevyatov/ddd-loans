@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace App\Shared\Domain\Enum;
 
-enum States: string
+enum State: string
 {
     case Alabama = 'AL';
     case Alaska = 'AK';

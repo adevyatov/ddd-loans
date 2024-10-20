@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace App\Clients\Domain\ValueObject;
 
-use App\Shared\Domain\Enum\States;
+use App\Shared\Domain\Enum\State;
 use Webmozart\Assert\Assert;
 
 final readonly class Address
@@ -26,7 +26,7 @@ final readonly class Address
     private function validate(): void
     {
         Assert::notEmpty($this->city, 'City must be provided');
-        Assert::true(States::isValid($this->state), 'State should be valid');
+        Assert::true(State::isValid($this->state), 'State should be valid');
         Assert::regex($this->zip, '/^\d{5}(-\d{4})?$/', 'ZIP should be valid');
     }
 }
