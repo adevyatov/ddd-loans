@@ -7,6 +7,9 @@ use Webmozart\Assert\Assert;
 
 final readonly class LoanTerms
 {
+    /**
+     * @param numeric-string $interestRate
+     */
     public function __construct(
         public int $months,
         public string $interestRate,

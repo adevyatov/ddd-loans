@@ -11,14 +11,14 @@ class InterestRateAdjustment implements LoanAdjustment
 {
     public function adjust(LoanTerms $terms, LoanClient $client): ?LoanTerms
     {
-        if ($client->state !== State::California) {
-            return null;
+        if ($client->state === State::California) {
+            return new LoanTerms(
+                months: $terms->months,
+                interestRate: bcadd($terms->interestRate, '11.49', 2),
+                amount: $terms->amount
+            );
         }
 
-        return new LoanTerms(
-            months: $terms->months,
-            interestRate: $terms->interestRate,
-            amount: $terms->amount
-        );
+        return null;
     }
 }
