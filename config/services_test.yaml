@@ -1,11 +1,11 @@
+imports:
+    - { resource: ./services_dev.yaml }
+
 services:
     _defaults:
         autowire: true
         autoconfigure: true
         public: true
-
-    DataFixtures\:
-        resource: '../tests/Fixtures'
 
     App\Shared\Infrastructure\Bus\MessengerCommandBus: ~
     App\Shared\Infrastructure\Bus\MessengerQueryBus: ~
