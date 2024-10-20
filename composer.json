@@ -64,14 +64,12 @@
             "phpmd": "cd tools/phpmd && composer install"
         },
         "post-install-cmd": [
-            "@copy-env",
             "@auto-scripts",
             "@tools:install"
         ],
         "post-update-cmd": [
             "@auto-scripts"
-        ],
-        "copy-env": "[ ! -f .env ] && cp .env.example .env"
+        ]
     },
     "conflict": {
         "symfony/symfony": "*"
