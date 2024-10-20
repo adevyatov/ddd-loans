@@ -7,7 +7,7 @@ use App\Products\Domain\Loan\Adjustments\LoanAdjustment;
 use App\Products\Domain\Loan\DTO\LoanApplication;
 use App\Shared\Domain\ValueObject\Uuid;
 
-class LoanOfferService
+class LoanIssueService
 {
     /**
      * @param LoanAdjustment[] $adjustments
@@ -19,7 +19,7 @@ class LoanOfferService
     {
     }
 
-    public function getOffer(LoanApplication $application): ?Loan
+    public function issue(LoanApplication $application): ?Loan
     {
         if ($this->restrictionService->isRestrictedFor($application->client)) {
             return null;
