@@ -5,7 +5,6 @@ namespace App\Shared\Infrastructure\Bus;
 
 use App\Shared\Domain\Bus\Query\Query;
 use App\Shared\Domain\Bus\Query\QueryBus;
-use App\Shared\Domain\Bus\Query\Result;
 use Symfony\Component\Messenger\HandleTrait;
 use Symfony\Component\Messenger\MessageBusInterface;
 
@@ -18,11 +17,8 @@ class MessengerQueryBus implements QueryBus
         $this->messageBus = $queryBus;
     }
 
-    public function execute(Query $query): ?Result
+    public function execute(Query $query): mixed
     {
-        /** @var mixed|Result $result */
-        $result = $this->handle($query);
-
-        return $result instanceof Result ? $result : null;
+        return $this->handle($query);
     }
 }

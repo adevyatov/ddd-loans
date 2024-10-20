@@ -6,5 +6,5 @@ namespace App\Shared\Domain\Bus\Query;
 
 interface QueryBus
 {
-    public function execute(Query $query): ?Result;
+    public function execute(Query $query): mixed;
 }
