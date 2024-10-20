@@ -67,7 +67,7 @@ class ClientFixture extends Fixture
                 contacts: $contacts
             );
 
-            $client = new Client(Uuid::generate(), $details);
+            $client = new Client(new Uuid($client['id']), $details);
 
             $manager->persist($client);
             $this->addReference(self::REFERENCE . $key, $client);
