@@ -23,6 +23,11 @@ final readonly class Uuid
         return new self(RamseyUuid::uuid4()->toString());
     }
 
+    public static function isValid(string $uuid): bool
+    {
+        return RamseyUuid::isValid($uuid);
+    }
+
     private function validate(): void
     {
         Assert::uuid($this->value, 'Must be a valid UUID');
