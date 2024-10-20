@@ -10,7 +10,7 @@ interface ClientRepository
 {
     public function save(Client $client): void;
 
-    public function findByEmail(string $email): ?Client;
+    public function findByEmail(string $email): Client;
 
-    public function findById(Uuid $id): ?Client;
+    public function findById(Uuid $id): Client;
 }

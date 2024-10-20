@@ -3,7 +3,9 @@ declare(strict_types=1);
 
 namespace App\Clients\Domain;
 
-class ClientNotFound
+use DomainException;
+
+class ClientNotFound extends DomainException
 {
 
 }

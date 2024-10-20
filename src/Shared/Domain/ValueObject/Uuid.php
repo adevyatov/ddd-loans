@@ -13,6 +13,11 @@ final readonly class Uuid
         $this->validate();
     }
 
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
     public static function generate(): self
     {
         return new self(RamseyUuid::uuid4()->toString());

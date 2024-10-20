@@ -16,11 +16,6 @@ class Client extends AggregateRoot
     {
     }
 
-    public static function create(ClientDetails $details): Client
-    {
-        return new self(Uuid::generate(), $details);
-    }
-
     public function id(): Uuid
     {
         return $this->id;
