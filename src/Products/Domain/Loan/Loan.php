@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Product\Domain\Loan;
+namespace App\Products\Domain\Loan;
 
-use App\Product\Domain\BaseProduct;
+use App\Products\Domain\BaseProduct;
 use App\Shared\Domain\ValueObject\Uuid;
 
 class Loan extends BaseProduct

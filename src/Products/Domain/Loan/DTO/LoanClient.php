@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Product\Domain\Loan\DTO;
+namespace App\Products\Domain\Loan\DTO;
 
 use App\Shared\Domain\Enum\State;
 

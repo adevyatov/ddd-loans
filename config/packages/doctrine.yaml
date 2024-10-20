@@ -28,7 +28,7 @@ doctrine:
             Products:
                 type: xml
                 is_bundle: false
-                dir: '%kernel.project_dir%/src/Clients/Infrastructure/Database/ORM'
+                dir: '%kernel.project_dir%/src/Products/Infrastructure/Database/ORM'
                 prefix: 'App\Products\Domain'
                 alias: Products
 

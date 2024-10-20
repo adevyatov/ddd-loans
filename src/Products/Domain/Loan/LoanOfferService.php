@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Product\Domain\Loan;
+namespace App\Products\Domain\Loan;
 
-use App\Product\Domain\Loan\Adjustments\LoanAdjustment;
-use App\Product\Domain\Loan\DTO\LoanApplication;
-use App\Product\Domain\Loan\Restriction\LoanRestriction;
+use App\Products\Domain\Loan\Adjustments\LoanAdjustment;
+use App\Products\Domain\Loan\DTO\LoanApplication;
+use App\Products\Domain\Loan\Restriction\LoanRestriction;
 
 class LoanOfferService
 {

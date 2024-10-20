@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Product\Domain\Loan\Adjustments;
+namespace App\Products\Domain\Loan\Adjustments;
 
-use App\Product\Domain\Loan\DTO\LoanClient;
-use App\Product\Domain\Loan\LoanTerms;
+use App\Products\Domain\Loan\DTO\LoanClient;
+use App\Products\Domain\Loan\LoanTerms;
 use App\Shared\Domain\Enum\State;
 
 class InterestRateAdjustment implements LoanAdjustment
