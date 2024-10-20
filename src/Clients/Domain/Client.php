@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Clients\Domain\Model;
+namespace App\Clients\Domain;
 
 use App\Clients\Domain\ValueObject\ClientDetails;
 use App\Shared\Domain\Model\AggregateRoot;

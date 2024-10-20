@@ -4,7 +4,7 @@
                   xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
                                       http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 
-    <entity name="App\Clients\Domain\Model\Client" table="clients_client">
+    <entity name="App\Clients\Domain\Client" table="clients_client">
         <id name="id" type="uuid">
             <generator strategy="NONE"/>
         </id>

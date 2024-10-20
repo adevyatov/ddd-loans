@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 namespace App\Clients\Application\Command;
 
+use App\Clients\Domain\Client;
 use App\Clients\Domain\ClientRepository;
-use App\Clients\Domain\Model\Client;
 use App\Shared\Domain\Bus\Command\CommandHandler;
 
 class RegisterClientCommandHandler implements CommandHandler

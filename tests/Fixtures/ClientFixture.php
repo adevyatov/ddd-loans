@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace DataFixtures;
 
-use App\Clients\Domain\Model\Client;
+use App\Clients\Domain\Client;
 use App\Clients\Domain\ValueObject\Address;
 use App\Clients\Domain\ValueObject\ClientDetails;
 use App\Clients\Domain\ValueObject\Contacts;

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Tests\Functional\Application\Query;
 
 use App\Clients\Application\Query\FindClientByIdQuery;
-use App\Clients\Domain\Model\Client;
+use App\Clients\Domain\Client;
 use App\Shared\Domain\Bus\Query\QueryBus;
 use App\Shared\Domain\ValueObject\Uuid;
 use DataFixtures\ClientFixture;

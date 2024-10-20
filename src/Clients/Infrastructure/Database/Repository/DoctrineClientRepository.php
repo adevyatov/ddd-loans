@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace App\Clients\Infrastructure\Database\Repository;
 
+use App\Clients\Domain\Client;
 use App\Clients\Domain\ClientNotFound;
 use App\Clients\Domain\ClientRepository;
-use App\Clients\Domain\Model\Client;
 use App\Shared\Domain\ValueObject\Uuid;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
