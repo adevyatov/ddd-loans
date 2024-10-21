@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Notifications\Infrastructure\Adapter;
+namespace App\Products\Infrastructure\Adapter;
 
 use App\Clients\Infrastructure\API\API;
-use App\Notifications\Domain\Client;
+use App\Products\Domain\Client;
 use App\Shared\Domain\ValueObject\Uuid;
 
 class ClientAdapter
@@ -13,13 +13,15 @@ class ClientAdapter
     {
     }
 
-    public function getClientById(Uuid $id): ?Client
+    public function getLoanClientById(Uuid $id): ?Client
     {
         $details = $this->api->getClientDetails($id->value);
 
         return new Client(
-            email: $details['contacts']['email'],
-            phone: $details['contacts']['phone'],
+            id: $id,
+            fico: $details['fico'],
+            age: $details['age'],
+            state: $details['address']['state'],
         );
     }
 }

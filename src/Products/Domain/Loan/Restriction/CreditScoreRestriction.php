@@ -9,6 +9,6 @@ class CreditScoreRestriction implements LoanRestriction
 {
     public function isRestricted(LoanClient $client): bool
     {
-        return $client->creditScore < 500;
+        return $client->fico < 500;
     }
 }

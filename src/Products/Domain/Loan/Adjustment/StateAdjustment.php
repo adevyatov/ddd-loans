@@ -7,7 +7,7 @@ use App\Products\Domain\Loan\DTO\LoanClient;
 use App\Products\Domain\Loan\LoanTerms;
 use App\Shared\Domain\Enum\State;
 
-class InterestRateAdjustment implements LoanAdjustment
+class StateAdjustment implements LoanAdjustment
 {
     public function adjust(LoanTerms $terms, LoanClient $client): ?LoanTerms
     {

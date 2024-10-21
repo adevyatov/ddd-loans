@@ -6,6 +6,7 @@ namespace App\Clients\Infrastructure\API;
 use App\Clients\Application\Query\FindClientByIdQuery;
 use App\Clients\Domain\Client;
 use App\Shared\Domain\Bus\Query\QueryBus;
+use App\Shared\Domain\Enum\State;
 use App\Shared\Domain\ValueObject\Uuid;
 
 readonly class API
@@ -28,6 +29,11 @@ readonly class API
      *       contacts: array{
      *           email: string,
      *           phone: string,
+     *       },
+     *       address: array{
+     *           city: string,
+     *           state: State,
+     *           zip: string,
      *       }
      *  }
      */
@@ -35,18 +41,24 @@ readonly class API
     {
         /** @var Client $client */
         $client = $this->queryBus->execute(new FindClientByIdQuery(new Uuid($id)));
+        $details = $client->details();
 
         return [
-            'age' => $client->details()->age(),
+            'age' => $details->age(),
             'name' => [
-                'firstName' => $client->details()->name()->firstName,
-                'lastName' => $client->details()->name()->lastName,
+                'firstName' => $details->name()->firstName,
+                'lastName' => $details->name()->lastName,
             ],
-            'fico' => $client->details()->fico()->value,
-            'ssn' => $client->details()->ssn()->value,
+            'fico' => $details->fico()->value,
+            'ssn' => $details->ssn()->value,
             'contacts' => [
-                'email' => $client->details()->contacts()->email,
-                'phone' => $client->details()->contacts()->phone,
+                'email' => $details->contacts()->email,
+                'phone' => $details->contacts()->phone,
+            ],
+            'address' => [
+                'city' => $details->address()->city,
+                'state' => $details->address()->state,
+                'zip' => $details->address()->zip,
             ]
         ];
     }
