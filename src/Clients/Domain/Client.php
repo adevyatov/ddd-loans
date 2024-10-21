@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Clients\Domain;
@@ -12,8 +13,7 @@ class Client extends AggregateRoot
     public function __construct(
         private readonly Uuid $id,
         private readonly ClientDetails $details,
-    )
-    {
+    ) {
     }
 
     public function id(): Uuid

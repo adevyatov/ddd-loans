@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Clients\Domain\ValueObject;
@@ -14,8 +15,7 @@ class ClientDetails
         private SSN $ssn,
         private FICO $fico,
         private Contacts $contacts,
-    )
-    {
+    ) {
         $this->validate();
     }
 

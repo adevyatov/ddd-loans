@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Products\Domain\Loan;
@@ -14,8 +15,7 @@ final readonly class LoanTerms
         public int $months,
         public string $interestRate,
         public int $amount,
-    )
-    {
+    ) {
         $this->validate();
     }
 

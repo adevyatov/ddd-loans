@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Notifications\Application\Event;
@@ -13,8 +14,7 @@ final readonly class LoanIssuedHandler implements EventHandler
     public function __construct(
         private ClientRepository $clientRepository,
         private NotificationSenderInterface $notificationSender
-    )
-    {
+    ) {
     }
 
     public function __invoke(LoanIssued $event): void

@@ -16,8 +16,6 @@ readonly class API
     }
 
     /**
-     * @param string $id
-     * @return array
      * @psalm-return array{
      *       age: int,
      *       name: array{

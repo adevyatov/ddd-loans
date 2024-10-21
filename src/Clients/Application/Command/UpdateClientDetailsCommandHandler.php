@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Clients\Application\Command;
@@ -8,7 +9,7 @@ use App\Shared\Domain\Bus\Command\CommandHandler;
 
 class UpdateClientDetailsCommandHandler implements CommandHandler
 {
-    public function __construct(private readonly ClientRepository $repository,)
+    public function __construct(private readonly ClientRepository $repository)
     {
     }
 

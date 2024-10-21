@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Clients\Application\Command;
@@ -21,7 +22,6 @@ final readonly class UpdateClientDetailsCommand implements Command
         public ?FICO $fico,
         public ?Name $name,
         public ?SSN $ssn,
-    )
-    {
+    ) {
     }
 }

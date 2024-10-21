@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Products\Domain\Loan\Event;
@@ -13,7 +14,6 @@ final readonly class LoanIssued implements Event
         public int $months,
         public string $interestRate,
         public int $amount,
-    )
-    {
+    ) {
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Products\Domain;
@@ -13,7 +14,6 @@ readonly class Client
         public int $fico,
         public int $age,
         public State $state,
-    )
-    {
+    ) {
     }
 }
