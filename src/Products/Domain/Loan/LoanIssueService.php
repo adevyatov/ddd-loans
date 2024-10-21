@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Products\Domain\Loan;
@@ -15,8 +16,7 @@ class LoanIssueService
     public function __construct(
         private readonly LoanRestrictionService $restrictionService,
         private readonly iterable $adjustments = []
-    )
-    {
+    ) {
     }
 
     public function issue(LoanApplication $application): ?Loan
@@ -36,6 +36,6 @@ class LoanIssueService
             $terms = $adjustedTerms;
         }
 
-        return new Loan(Uuid::generate(), $application->client->id, $terms);
+        return Loan::issue(Uuid::generate(), $application->client->id, $terms);
     }
 }

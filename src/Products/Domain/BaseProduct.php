@@ -1,9 +1,12 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Products\Domain;
 
-abstract class BaseProduct
+use App\Shared\Domain\Model\AggregateRoot;
+
+abstract class BaseProduct extends AggregateRoot
 {
     abstract public static function name(): string;
 }
