@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Products\Domain\Loan;
@@ -8,7 +9,6 @@ use App\Products\Domain\Loan\Restriction\LoanRestriction;
 
 class LoanRestrictionService
 {
-
     /**
      * @param LoanRestriction[] $restrictions
      */

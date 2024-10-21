@@ -19,4 +19,15 @@ final readonly class LoanClient extends Client
     ) {
         parent::__construct($id, $fico, $age, $state);
     }
+
+    public static function fromClient(Client $client, int $incomePerMonth): self
+    {
+        return new LoanClient(
+            $client->id,
+            $client->fico,
+            $client->age,
+            $client->state,
+            $incomePerMonth,
+        );
+    }
 }

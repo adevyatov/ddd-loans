@@ -15,6 +15,6 @@ class CheckLoanEligibilityQueryHandler implements QueryHandler
 
     public function __invoke(CheckLoanEligibilityQuery $query): bool
     {
-        return $this->restrictionService->isRestrictedFor($query->client);
+        return !$this->restrictionService->isRestrictedFor($query->client);
     }
 }

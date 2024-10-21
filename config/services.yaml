@@ -7,10 +7,19 @@ services:
 
     App\:
         resource: '../src'
+        exclude: '../src/Shared/Infrastructure/Doctrine/Migrations'
 
     App\Products\Domain\Loan\LoanIssueService:
         arguments:
             $adjustments: !tagged 'products.loan.adjustment'
+
+    App\Products\Domain\Loan\LoanRestrictionService:
+        arguments:
+            - !tagged 'products.loan.restriction'
+
+    App\Products\Application\Controller\:
+        resource: '../src/Products/Application/Controller'
+        tags: [ 'controller.service_arguments' ]
 
     _instanceof:
         App\Shared\Domain\Bus\Command\CommandHandler:
