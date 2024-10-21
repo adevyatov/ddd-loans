@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Clients\Infrastructure\API;
@@ -6,7 +7,6 @@ namespace App\Clients\Infrastructure\API;
 use App\Clients\Application\Query\FindClientByIdQuery;
 use App\Clients\Domain\Client;
 use App\Shared\Domain\Bus\Query\QueryBus;
-use App\Shared\Domain\Enum\State;
 use App\Shared\Domain\ValueObject\Uuid;
 
 readonly class API
@@ -32,7 +32,7 @@ readonly class API
      *       },
      *       address: array{
      *           city: string,
-     *           state: State,
+     *           state: string,
      *           zip: string,
      *       }
      *  }

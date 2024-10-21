@@ -16,12 +16,12 @@
         </ignoreFiles>
     </projectFiles>
 
-    <!--    <issueHandlers>-->
-    <!--        <UnusedVariable errorLevel="suppress"/>-->
-    <!--        <UnusedParam errorLevel="suppress"/>-->
-    <!--        <UnusedMethod errorLevel="suppress"/>-->
-    <!--        <UnusedProperty errorLevel="suppress"/>-->
-    <!--    </issueHandlers>-->
+    <issueHandlers>
+        <UnusedVariable errorLevel="suppress"/>
+        <UnusedParam errorLevel="suppress"/>
+        <UnusedMethod errorLevel="suppress"/>
+        <UnusedProperty errorLevel="suppress"/>
+    </issueHandlers>
 
     <plugins>
         <pluginClass class="Psalm\SymfonyPsalmPlugin\Plugin">

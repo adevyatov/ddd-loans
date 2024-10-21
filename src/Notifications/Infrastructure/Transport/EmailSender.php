@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Notifications\Infrastructure\Transport;
@@ -10,5 +11,6 @@ class EmailSender implements NotificationSenderInterface
     public function send(string $recipient, string $subject, string $message): bool
     {
         // implementation...
+        return true;
     }
 }
