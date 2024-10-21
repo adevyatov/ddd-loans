@@ -7,9 +7,9 @@ use Webmozart\Assert\Assert;
 
 final readonly class Name
 {
-    private string $firstName;
+    public string $firstName;
 
-    private string $lastName;
+    public string $lastName;
 
     public function __construct(string $firstName, string $lastName)
     {
@@ -17,16 +17,6 @@ final readonly class Name
         $this->lastName = trim($lastName);
 
         $this->validate();
-    }
-
-    public function firstName(): string
-    {
-        return $this->firstName;
-    }
-
-    public function lastName(): string
-    {
-        return $this->lastName;
     }
 
     private function validate(): void

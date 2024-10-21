@@ -12,16 +12,6 @@ final readonly class Contacts
         $this->validate();
     }
 
-    public function email(): string
-    {
-        return $this->email;
-    }
-
-    public function phone(): string
-    {
-        return $this->phone;
-    }
-
     private function validate(): void
     {
         Assert::email($this->email, 'Should be a valid email address');
