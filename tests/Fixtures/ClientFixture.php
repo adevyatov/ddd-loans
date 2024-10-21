@@ -44,7 +44,7 @@ class ClientFixture extends Fixture
             'zip' => '40202',
             'fico' => 500,
             'email' => 'john.doe@example.com',
-            'phoneNumber' => '11234567890',
+            'phone' => '11234567890',
             'ssn' => '123-45-6789',
         ]
     ];
@@ -55,7 +55,7 @@ class ClientFixture extends Fixture
             $name = new Name($client['firstName'], $client['lastName']);
             $address = new Address($client['city'], $client['state'], $client['zip']);
             $fico = new FICO($client['fico']);
-            $contacts = new Contacts($client['email'], $client['phoneNumber']);
+            $contacts = new Contacts($client['email'], $client['phone']);
             $ssn = new SSN($client['ssn']);
 
             $details = new ClientDetails(

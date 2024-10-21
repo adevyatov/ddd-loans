@@ -2,18 +2,17 @@
 
 declare(strict_types=1);
 
-namespace App\Tests\Functional\Application\Query;
+namespace App\Tests\Functional\Clients\Application\Query;
 
 use App\Clients\Application\Query\FindClientByIdQuery;
 use App\Clients\Domain\Client;
 use App\Shared\Domain\Bus\Query\QueryBus;
 use App\Shared\Domain\ValueObject\Uuid;
+use App\Tests\Functional\BaseWebTestCase;
 use DataFixtures\ClientFixture;
-use Liip\TestFixturesBundle\Services\DatabaseToolCollection;
 use Liip\TestFixturesBundle\Services\DatabaseTools\AbstractDatabaseTool;
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class FindClientByIdQueryHandlerTest extends WebTestCase
+class FindClientByIdQueryHandlerTest extends BaseWebTestCase
 {
     private QueryBus $bus;
 
@@ -23,9 +22,7 @@ class FindClientByIdQueryHandlerTest extends WebTestCase
     public function setUp(): void
     {
         parent::setUp();
-
         $this->bus = static::getContainer()->get(QueryBus::class);
-        $this->databaseTool = static::getContainer()->get(DatabaseToolCollection::class)->get();
     }
 
     public function testUserExists(): void
