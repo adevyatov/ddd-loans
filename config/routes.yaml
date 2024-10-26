@@ -1,3 +1,4 @@
-products_check_loan_eligibility:
-    path: /v1/products/loan/check-eligibility
-    controller: App\Products\Application\Controller\CheckLoanEligibilityAction
+products:
+    resource: '../src/Products/Presentation'
+    type: annotation
+    prefix: /v1/products

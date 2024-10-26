@@ -17,8 +17,8 @@ services:
         arguments:
             - !tagged 'products.loan.restriction'
 
-    App\Products\Application\Controller\:
-        resource: '../src/Products/Application/Controller'
+    App\Products\Presentation\:
+        resource: '../src/Products/Presentation'
         tags: [ 'controller.service_arguments' ]
 
     _instanceof:
