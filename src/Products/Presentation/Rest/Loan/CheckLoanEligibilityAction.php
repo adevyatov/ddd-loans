@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Products\Presentation\Controller;
+namespace App\Products\Presentation\Rest\Loan;
 
 use App\Products\Application\Query\CheckLoanEligibilityQuery;
 use App\Products\Domain\ClientRepository;
@@ -19,7 +19,7 @@ class CheckLoanEligibilityAction
     {
     }
 
-    #[Route('/loan/check-eligibility')]
+    #[Route('/check-eligibility')]
     public function __invoke(#[MapRequestPayload] CheckLoanEligibilityRequest $request): JsonResponse
     {
         $client = $this->repository->getById(new Uuid($request->clientId));

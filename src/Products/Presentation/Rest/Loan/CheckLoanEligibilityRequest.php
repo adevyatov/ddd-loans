@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Products\Presentation\Controller;
+namespace App\Products\Presentation\Rest\Loan;
 
 use Symfony\Component\Validator\Constraints\GreaterThan;
 use Symfony\Component\Validator\Constraints\Uuid;

@@ -1,4 +1,4 @@
 products:
-    resource: '../src/Products/Presentation'
+    resource: '../src/Products/Presentation/Rest/Loan'
     type: annotation
-    prefix: /v1/products
+    prefix: /v1/products/loan
