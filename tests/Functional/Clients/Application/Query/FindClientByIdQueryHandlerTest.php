@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Tests\Functional\Clients\Application\Query;
 
-use App\Clients\Application\Query\FindClientByIdQuery;
+use App\Clients\Application\Query\FindClientQuery;
 use App\Clients\Domain\Client;
 use App\Shared\Domain\Bus\Query\QueryBus;
 use App\Shared\Domain\ValueObject\Uuid;
@@ -33,7 +33,7 @@ class FindClientByIdQueryHandlerTest extends BaseWebTestCase
 
         $id = new Uuid(ClientFixture::CLIENTS[0]['id']);
 
-        $result = $this->bus->execute(new FindClientByIdQuery($id));
+        $result = $this->bus->execute(new FindClientQuery($id));
 
         self::assertInstanceOf(Client::class, $result);
     }

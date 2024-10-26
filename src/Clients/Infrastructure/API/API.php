@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Clients\Infrastructure\API;
 
-use App\Clients\Application\Query\FindClientByIdQuery;
+use App\Clients\Application\Query\FindClientQuery;
 use App\Clients\Domain\Client;
 use App\Shared\Domain\Bus\Query\QueryBus;
 use App\Shared\Domain\ValueObject\Uuid;
@@ -38,7 +38,7 @@ readonly class API
     public function getClientDetails(string $id): array
     {
         /** @var Client $client */
-        $client = $this->queryBus->execute(new FindClientByIdQuery(new Uuid($id)));
+        $client = $this->queryBus->execute(new FindClientQuery(new Uuid($id)));
         $details = $client->details();
 
         return [

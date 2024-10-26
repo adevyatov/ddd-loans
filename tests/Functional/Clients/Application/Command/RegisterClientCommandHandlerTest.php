@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Tests\Functional\Clients\Application\Command;
 
 use App\Clients\Application\Command\RegisterClientCommand;
-use App\Clients\Application\Query\FindClientByIdQuery;
+use App\Clients\Application\Query\FindClientQuery;
 use App\Clients\Domain\Client;
 use App\Clients\Domain\ValueObject\Address;
 use App\Clients\Domain\ValueObject\ClientDetails;
@@ -25,14 +25,14 @@ class RegisterClientCommandHandlerTest extends WebTestCase
     {
         /** @var CommandBus $commandBus */
         $commandBus = static::getContainer()->get(CommandBus::class);
-        /** @var QueryBus $commandBus */
+        /** @var QueryBus $queryBus */
         $queryBus = static::getContainer()->get(QueryBus::class);
 
         $id = Uuid::generate();
         $commandBus->execute(new RegisterClientCommand($id, $this->createClientDetails()));
 
         /** @var Client|null $client */
-        $client = $queryBus->execute(new FindClientByIdQuery($id));
+        $client = $queryBus->execute(new FindClientQuery($id));
 
         $this->assertNotEmpty($client);
         $this->assertSame($client->id()->value, $id->value);
