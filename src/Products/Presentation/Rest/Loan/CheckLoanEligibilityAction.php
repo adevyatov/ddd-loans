@@ -10,9 +10,11 @@ use App\Products\Domain\Loan\DTO\LoanClient;
 use App\Shared\Domain\Bus\Query\QueryBus;
 use App\Shared\Domain\ValueObject\Uuid;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpKernel\Attribute\AsController;
 use Symfony\Component\HttpKernel\Attribute\MapRequestPayload;
 use Symfony\Component\Routing\Annotation\Route;
 
+#[AsController]
 class CheckLoanEligibilityAction
 {
     public function __construct(private readonly QueryBus $queryBus, private readonly ClientRepository $repository)

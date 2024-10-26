@@ -2,3 +2,8 @@ products:
     resource: '../src/Products/Presentation/Rest/Loan'
     type: annotation
     prefix: /v1/products/loan
+
+clients:
+    resource: '../src/Clients/Presentation/Rest'
+    type: annotation
+    prefix: /v1/clients

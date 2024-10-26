@@ -12,5 +12,7 @@ interface ClientRepository
 
     public function findByEmail(string $email): Client;
 
+    public function hasWithEmail(string $email): bool;
+
     public function findById(Uuid $id): Client;
 }

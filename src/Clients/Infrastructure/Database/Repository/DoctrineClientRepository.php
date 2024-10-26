@@ -28,13 +28,18 @@ class DoctrineClientRepository extends ServiceEntityRepository implements Client
 
     public function findByEmail(string $email): Client
     {
-        $client = $this->findBy(['email' => $email]);
+        $client = $this->findBy(['details.contacts.email' => $email]);
 
         if (!$client) {
             throw new ClientNotFound();
         }
 
         return $client;
+    }
+
+    public function hasWithEmail(string $email): bool
+    {
+        return $this->count(['details.contacts.email' => $email]) > 0;
     }
 
     public function findById(Uuid $id): Client
