@@ -10,7 +10,6 @@ use App\Products\Domain\Client;
 use App\Products\Domain\Loan\DTO\LoanClient;
 use App\Shared\Domain\Bus\Query\QueryBus;
 use App\Shared\Domain\ValueObject\Uuid;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpKernel\Attribute\AsController;
 use Symfony\Component\HttpKernel\Attribute\MapRequestPayload;
 use Symfony\Component\Routing\Annotation\Route;
@@ -23,7 +22,7 @@ class CheckLoanEligibilityAction
     }
 
     #[Route('/check-eligibility')]
-    public function __invoke(#[MapRequestPayload] CheckLoanEligibilityRequest $request): JsonResponse
+    public function __invoke(#[MapRequestPayload] CheckLoanEligibilityRequest $request): bool
     {
         /** @var Client $client */
         $client = $this->queryBus->execute(new FindClientQuery(new Uuid($request->clientId)));
@@ -32,6 +31,6 @@ class CheckLoanEligibilityAction
         /** @var boolean $result */
         $result = $this->queryBus->execute(new CheckLoanEligibilityQuery($loanClient));
 
-        return new JsonResponse($result);
+        return $result;
     }
 }
