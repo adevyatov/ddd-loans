@@ -1,0 +1,74 @@
+name: CI
+
+on:
+    push:
+        branches: [ '*' ]
+
+jobs:
+    unit:
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Checkout
+                uses: actions/checkout@v4
+
+            -   name: Build
+                run: docker compose build --no-cache unit
+
+            -   name: Run
+                run: docker compose run unit
+
+    functional:
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Checkout
+                uses: actions/checkout@v4
+
+            -   name: Build
+                run: docker compose build --no-cache functional
+
+            -   name: Run database
+                run: docker compose up -d database
+
+            -   name: Migrations
+                run: docker compose run functional bin/console doctrine:migrations:migrate -n
+
+            -   name: Run
+                run: docker compose run functional
+
+    php-cs-fixer:
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Checkout
+                uses: actions/checkout@v4
+
+            -   name: Build
+                run: docker compose build linter
+
+            -   name: PHP-CS-Fixer
+                run: docker compose run linter ./tools/php-cs-fixer/vendor/bin/php-cs-fixer fix --dry-run --diff
+
+
+
+    phpmd:
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Checkout
+                uses: actions/checkout@v4
+
+            -   name: Build
+                run: docker compose build linter
+
+            -   name: PHPMD
+                run: docker compose run linter ./tools/phpmd/vendor/bin/phpmd src ansi phpmd.xml
+
+    psalm:
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Checkout
+                uses: actions/checkout@v4
+
+            -   name: Build
+                run: docker compose build linter
+
+            -   name: Psalm
+                run: docker compose run linter ./tools/psalm/vendor/bin/psalm

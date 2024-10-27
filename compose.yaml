@@ -11,6 +11,42 @@ services:
             - .env
         ports:
             - "5432:5432"
+        healthcheck:
+            test: [ "CMD-SHELL", "pg_isready || exit 1" ]
+            interval: 10s
+            timeout: 5s
+            retries: 10
+
+    unit:
+        build:
+            context: .
+            dockerfile: docker/php/Dockerfile
+        command: bin/phpunit --testsuite=unit
+        env_file:
+            - .env.test
+        profiles: [ 'testing' ]
+
+    functional:
+        build:
+            context: .
+            dockerfile: docker/php/Dockerfile
+        command: bin/phpunit --testsuite=functional
+        depends_on:
+            database:
+                condition: service_healthy
+        environment:
+            DATABASE_URL: postgresql://postgres:postgres@database:5432/backend?serverVersion=16&charset=utf8
+        env_file:
+            - .env.test
+        profiles: [ 'testing' ]
+
+    linter:
+        build:
+            context: .
+            dockerfile: docker/php/Dockerfile
+        env_file:
+            - .env.test
+        profiles: [ 'linter' ]
 
 volumes:
     database_data:
